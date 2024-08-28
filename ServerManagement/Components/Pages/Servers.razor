@@ -21,6 +21,9 @@
     </div>
 </div>
 <br />
+<p>
+    <ServerComponent></ServerComponent>
+</p>
 <ul>
     @foreach(var server in servers)
     {
@@ -36,7 +39,6 @@
                 Model="server"
                 FormName="@($"form-server-{server.ServerId}")"
                 OnValidSubmit="@(() => { DeleteServer(server.ServerId); })">
-
                 <button type="submit" class="btn btn-primary">Delete</button>
             </EditForm>
         </li>
@@ -55,8 +57,9 @@
         if (serverId > 0)
         {
             ServersRepository.DeleteServer(serverId);
-            NavigationManager.Refresh();
-            // NavigationManager.NavigateTo("/Servers");
+            // NavigationManager.Refresh();
+            NavigationManager.NavigateTo("/Servers");
+
         }
     }
 }
