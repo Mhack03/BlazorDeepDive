@@ -68,7 +68,7 @@
             var server = servers.FirstOrDefault(s => s.ServerId == serverId);
             if (server != null)
             {
-                servers.Remove(server);
+                servers.Remove(server);                
             }
         }
 
